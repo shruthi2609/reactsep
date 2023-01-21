@@ -1,21 +1,12 @@
 import UserProfile from "./UserProfile"
-function WelcomeNote(){
+function WelcomeNote(props){
     return(
+       
         <div>
-        <UserProfile></UserProfile>
-        <h1>Hello User ! Good morning ! </h1>
+            {console.log(props.username,props.role)}
+        <UserProfile username={props.username} role={props.role}></UserProfile>
+        <h1>Hello {props.username} ! Good morning ! </h1>
         </div>
     )
 }
-function SomeComponent(){
-    return(
-        <h1>Something</h1>
-    )
-}
-function AnotherComponent(){
-    return(
-        <h1>this is from another component</h1>
-    )
-}
-export {WelcomeNote,SomeComponent}
-export default AnotherComponent
+export default WelcomeNote
