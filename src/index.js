@@ -1,15 +1,14 @@
-import React from 'react';
+
 import ReactDOM from 'react-dom/client';
-import WelcomeNote from './WelcomeNote';
+import CounterComponent from './Class Components/CounterComponent';
+import SimpleClassComponent from './Class Components/SimpleClassComponent';
+import StateInClass from './Class Components/StateInClass';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
    <>
-
-  <WelcomeNote username="john" role="admin"></WelcomeNote>
-  
-
-
+<StateInClass></StateInClass>
+<CounterComponent></CounterComponent>
   </>
 );
 
