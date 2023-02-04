@@ -1,8 +1,9 @@
+import ContactManager from "./Functional Components/ContactManager"
 import SimpleStateFun from "./Functional Components/SimpleStateFun"
 function App(){
     return(
         <div>
-    <SimpleStateFun></SimpleStateFun>
+<ContactManager></ContactManager>
         </div>
     )
 }
