@@ -1,14 +1,18 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import axios from "axios"
 function ContactManagerAPI(){
     const [contacts,setContact]=useState([])
     const [firstname,setFname]=useState("")
     const [phone,setPhone]=useState("")
     const [email,setEmail]=useState("")
-    const callAPI=()=>{
-      /*  fetch("http://localhost:3001/contactApp").then((res)=>{return res.json()}).then((res)=>setContact(res)).catch((err)=>console.log(err))*/
+    const [flag,setFlag]=useState(false)
+  /*  const callAPI=()=>{
+      /*  fetch("http://localhost:3001/contactApp").then((res)=>{return res.json()}).then((res)=>setContact(res)).catch((err)=>console.log(err))
         axios.get("http://localhost:3001/contactApp").then((res)=>setContact(res.data)).catch((err)=>console.log(err))
-    }
+    }*/
+    useEffect(()=>{
+        axios.get("http://localhost:3001/contactApp").then((res)=>setContact(res.data)).catch((err)=>console.log(err))
+    },[flag])
    
     const handleInput=(e,keyword)=>{
         if(keyword==="fname"){
@@ -24,11 +28,12 @@ function ContactManagerAPI(){
     const addContact=(e)=>{
         e.preventDefault()
         axios.post("http://localhost:3001/contactApp",{
-            "id":2,
+            "id":4,
             "fname":firstname,
             "phone":phone,
             "email":email
         }).then((res)=>console.log(res)).catch((err)=>console.log(err))
+        setFlag(!flag)
      
     }
     return(
@@ -39,7 +44,7 @@ function ContactManagerAPI(){
                 Email:<input type='text' onChange={(e)=>handleInput(e,"eml")}></input>
                 <button onClick={(e)=>addContact(e)}>add contact</button>
             </form>
-            <button onClick={()=>callAPI()}>call API</button>
+           
             {
                 contacts.map((item)=>(
                     <>
