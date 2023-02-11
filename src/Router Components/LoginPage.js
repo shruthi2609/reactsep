@@ -17,7 +17,7 @@ function LoginPage(){
     }
     const handleLogin=(e)=>{
         e.preventDefault()
-        if(uname==="admin"&&password==="admin123"){
+        if(password==="admin123"){
             setFlag(true)
         }
         else{
@@ -34,7 +34,7 @@ function LoginPage(){
                 (e,"pword")}></input>
                 <button onClick={(e)=>handleLogin(e)}>login</button>
                 {
-                    flag?navigate("/dashboard"):<h1>{msg}</h1>
+                    flag?navigate(`/dashboard/${uname}/hsjhdsdhksdh`):<h1>{msg}</h1>
                 }
 
             </form>
