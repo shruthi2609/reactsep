@@ -1,10 +1,11 @@
-export function increment(){
+ function increment(){
     return {
         type:'INCREMENT'
     }
 }
-export function decrement(){
+ function decrement(){
     return {
         type:'DECREMENT'
     }
 }
+export {increment,decrement}
