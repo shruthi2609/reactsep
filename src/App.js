@@ -1,10 +1,11 @@
-import CartConnector from "./Component Configs/CartConnector"
+import DashBoardComponent from "./Reduxjs Toolkit/Components/DashBoardComponent"
+import LoginComponent from "./Reduxjs Toolkit/Components/LoginComponent"
 
 function App(){
     return(
         <div>
-        <CartConnector></CartConnector>
-       {/* <ConnectorB></ConnectorB> */}
+      <DashBoardComponent></DashBoardComponent>
+      <LoginComponent></LoginComponent>
         </div>
         
     )

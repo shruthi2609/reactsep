@@ -1,14 +1,19 @@
 
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import {createStore} from "redux"
+import {configureStore} from "@reduxjs/toolkit"
 import { Provider } from 'react-redux';
-import reducer from './Reducer';
-const cartStore=createStore(reducer)
+import loginReducer from './Reduxjs Toolkit/loginReducer';
+const userStore=configureStore({
+   reducer:{
+      //fill it
+      userinfo:loginReducer
+   }
+})
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-   <Provider store={cartStore}>
+   <Provider store={userStore}>
 <App></App>
 </Provider>
 );
