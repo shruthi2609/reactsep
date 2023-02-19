@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { login } from "../loginReducer"
+import "./LoginComponent.css"
 function LoginComponent(){
     const [uname,setUname]=useState("")
     const [email,setEmail]=useState("")
@@ -24,7 +25,7 @@ function LoginComponent(){
         dispatch(login({username:uname,email:email,role:role}))
     }
     return(
-        <div>
+        <div className="container">
             Username:<input type='text' onChange={(e)=>handleChange(e,"username")}></input>
             Email:<input type='text' onChange={(e)=>handleChange(e,"email")}>
             </input>
